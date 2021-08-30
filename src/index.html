@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <title>Journal</title>
 </head>
+
 <body>
-  <h3>Make a new journal entry:</h3>
-  <form id="journal-entry-form">
-    <label for="title">Entry title:</label>
-    <input id="title" type="text">
-    <label for="body">Entry:</label>
-    <input id="body" type="text">
-    <label for="date">Entry date:</label>
-    <input id="date" type="date">
-    <button type="submit">Submit</button>
-  </form>
-  <ul id="journal"></ul>
+  <div class="container">
+    <h3>Make a new journal entry:</h3>
+    <form id="journal-entry-form">
+      <div class="form-group">
+        <label for="title">Entry title:</label>
+        <input id="title" class="form-control" type="text">
+        <label for="date">Entry date:</label>
+        <input id="date" type="date">
+      </div>
+      <div class="form-group">
+        <label for="body">Entry:</label>
+        <textarea class="form-control" id="body" name="body" rows="4" cols="50">
+          Make a new entry.
+        </textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="journal"></div>
+  </div>
 </body>
+
 </html>

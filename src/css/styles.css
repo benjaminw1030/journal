@@ -2,3 +2,7 @@ body {
   background-color: burlywood;
   text-align: center;
 }
+
+.card {
+  margin-top: 15px;
+}
