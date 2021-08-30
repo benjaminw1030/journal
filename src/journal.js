@@ -5,15 +5,29 @@ export default function Entry(title, body, date) {
 }
 
 Entry.prototype.wordCount = function() {
-  return "I can't answer that yet!";
+  let bodyWords = this.body.split(" ");
+  let titleWords = this.title.split(" ");
+  return bodyWords.length + titleWords.length;
 }
 
 Entry.prototype.vowelCount = function() {
-  return "I can't answer that yet!";
+  const vowels = ["a","e","i","o","u"];
+  let bodyLetters = this.body.toLowerCase().split("");
+  let titleLetters = this.title.toLowerCase().split("");
+  let bodyVowels = bodyLetters.filter(letter => vowels.includes(letter));
+  let titleVowels = titleLetters.filter(letter => vowels.includes(letter));
+  return bodyVowels.length + titleVowels.length;
 }
 
 Entry.prototype.consonantCount = function() {
-  return "I can't answer that yet!";
+  const vowels = ["a","e","i","o","u"];
+  let bodyOnlyLetters = this.body.replace(/[^a-z]/gi, "");
+  let titleOnlyLetters = this.title.replace(/[^a-z]/gi, "");
+  let bodyLetters = bodyOnlyLetters.toLowerCase().split("");
+  let titleLetters = titleOnlyLetters.toLowerCase().split("");
+  let bodyConsonant = bodyLetters.filter(letter => !vowels.includes(letter));
+  let titleConsonant = titleLetters.filter(letter => !vowels.includes(letter)); 
+  return bodyConsonant.length + titleConsonant.length;
 }
 
 Entry.prototype.getTeaser = function() {
