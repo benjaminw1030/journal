@@ -31,5 +31,11 @@ Entry.prototype.consonantCount = function() {
 }
 
 Entry.prototype.getTeaser = function() {
-  return "I can't answer that yet!";
+  let bodyArray = this.body.split(" ");
+  let firstSentenceEnd = bodyArray.findIndex(element => element.includes(".") || element.includes("!") || element.includes("?"));
+  if (firstSentenceEnd >= 7) {
+    return bodyArray.slice(0, 8).join(" ");
+  } else {
+    return bodyArray.slice(0, firstSentenceEnd + 1).join(" ");
+  }
 }

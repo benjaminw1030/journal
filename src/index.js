@@ -14,11 +14,13 @@ $(document).ready(function() {
     const entryDate = entry.date;
     const entryTitle = entry.title;
     const entryBody = entry.body;
-    $('#journal').append("<p>" + entryDate + "</p>");
-    $('#journal').append("<p>" + entryTitle + "</p>");
+    $('#journal').append("<h4>" + entryDate + "</h4>");
+    $('#journal').append("<h4>" + entryTitle + "</h4>");
+    $('#journal').append("<h5>" + entry.getTeaser() + "</h5>");
     $('#journal').append("<p>" + entryBody + "</p>");
-    $('#journal').append("<p>" + entry.wordCount() + "</p>");
-    $('#journal').append("<p>" + entry.vowelCount() + "</p>");
-    $('#journal').append("<p>" + entry.consonantCount() + "</p>");
+    $('#journal').append("<p>This entry contains " + entry.wordCount() + " words.</p>");
+    $('#journal').append("<p>This entry contains " + entry.vowelCount() + " vowels.</p>");
+    $('#journal').append("<p>This entry contains " + entry.consonantCount() + " consonants.</p>");
+    
   });
 });
